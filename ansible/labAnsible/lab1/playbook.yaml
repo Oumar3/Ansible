@@ -1,0 +1,14 @@
+---
+- name: Installation de mariadb et postgresql dans db-server
+  hosts: dbserver # Définir dans ton fichier d'inventaire
+  become: yes
+  roles:
+    - mariadb
+    - postgres
+
+- name: Installation de nginx et docker
+  hosts: webserver # Définir dans ton fichier d'inventaire
+  become: yes
+  roles:
+    - ngnix
+    - docker

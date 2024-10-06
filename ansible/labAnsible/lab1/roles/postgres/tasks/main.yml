@@ -1,0 +1,7 @@
+---
+
+- name: Installer les paquets nécessaires
+  apt:
+    name: postgresql
+    state: present
+  when: ansible_distribution == "Ubuntu"

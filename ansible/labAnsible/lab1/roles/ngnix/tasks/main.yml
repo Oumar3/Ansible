@@ -1,0 +1,14 @@
+---
+
+- name: Installation de Ngnix dans le webserver
+  become: true
+  apt:
+    update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+
+- name: Mettre à jour le cache des paquets
+  become: true
+  apt:
+    name: nginx
+    state: present
+  when: ansible_distribution == "Ubuntu"

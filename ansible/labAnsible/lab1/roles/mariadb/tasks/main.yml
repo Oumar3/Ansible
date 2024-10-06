@@ -1,0 +1,7 @@
+---
+- name: Installer les paquets nécessaires
+  become: true
+  apt:
+    name: mariadb-server
+    state: latest
+  when: ansible_distribution == "Ubuntu"
